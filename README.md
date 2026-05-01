@@ -39,20 +39,19 @@ This project was developed as part of a database systems course and demonstrates
 ## 🗂 Project Structure
 
 ```text
-gamehub-webapp/
-│
-├── server.js
-├── package.json
-├── package-lock.json
-├── .env.example
-│
-├── public/
-│   ├── index.html
-│   ├── styles.css
-│   └── app.js
-│
-└── database/
-    └── gamehub_real_games_dump.sql
+Gamehub/
+├── README.md
+└── gamehub_webapp/
+    ├── server.js
+    ├── package.json
+    ├── package-lock.json
+    ├── .env.example
+    ├── public/
+    │   ├── index.html
+    │   ├── styles.css
+    │   └── app.js
+    └── database/
+        └── gamehub_real_games_dump.sql
 ```
 
 ---
@@ -62,7 +61,7 @@ gamehub-webapp/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/gamehub-webapp.git
+git clone https://github.com/mgamre/gamehub-webapp.git
 cd gamehub-webapp
 ```
 
