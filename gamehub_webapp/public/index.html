@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameHub</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">GH</div><div><h1>GameHub</h1><p>Steam-like game platform</p></div></div>
+    <nav>
+      <button class="nav-btn active" data-section="store">Store</button>
+      <button class="nav-btn" data-section="cart">Cart</button>
+      <button class="nav-btn" data-section="library">Library</button>
+      <button class="nav-btn" data-section="orders">Orders</button>
+      <button class="nav-btn" data-section="reviews">Reviews</button>
+      <button class="nav-btn" data-section="friends">Friends</button>
+    </nav>
+    <div class="user-card"><label>Active user</label><select id="userSelect"></select><small>This simulates login for the demo.</small></div>
+    <div class="db-card" id="dbStatus">Checking database...</div>
+  </aside>
+  <main class="main">
+    <section id="store" class="page active">
+      <div class="hero"><div><span class="tag">Final Application Demo</span><h2>Discover, buy, review, and play games.</h2><p>Connected to the PostgreSQL database from Phase 2.</p></div></div>
+      <div class="toolbar"><input id="searchInput" placeholder="Search games..."><select id="genreFilter"><option value="">All genres</option></select><label class="check"><input type="checkbox" id="freeOnly"> Free only</label></div>
+      <div id="gamesGrid" class="grid"></div>
+    </section>
+    <section id="cart" class="page"><div class="page-head"><h2>Shopping Cart</h2><button id="checkoutBtn" class="primary">Checkout</button></div><div id="cartList" class="panel"></div></section>
+    <section id="library" class="page"><div class="page-head"><h2>My Library</h2><p>Owned games from the Ownership table.</p></div><div id="libraryList" class="grid"></div></section>
+    <section id="orders" class="page"><div class="page-head"><h2>Order History</h2><p>Orders and order items from PostgreSQL.</p></div><div id="ordersList" class="panel"></div></section>
+    <section id="reviews" class="page">
+      <div class="page-head"><h2>Reviews</h2><p>Users can review games they own.</p></div>
+      <div class="form-panel"><h3>Add / Update Review</h3><select id="reviewGameSelect"></select><select id="ratingSelect"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select><textarea id="reviewText" placeholder="Write your review..."></textarea><button id="submitReviewBtn" class="primary">Submit Review</button></div>
+      <div id="reviewList" class="panel"></div>
+    </section>
+    <section id="friends" class="page">
+      <div class="page-head"><h2>Friends & Messages</h2><p>Messages are only allowed between friends.</p></div>
+      <div class="two-col"><div class="panel"><h3>Friend List</h3><div id="friendsList"></div></div><div class="panel"><h3>Conversation</h3><select id="friendSelect"></select><div id="messagesList" class="messages"></div><div class="message-box"><input id="messageInput" placeholder="Type a message..."><button id="sendMessageBtn" class="primary">Send</button></div></div></div>
+    </section>
+  </main>
+  <div id="toast" class="toast"></div><script src="app.js"></script>
+</body>
+</html>
